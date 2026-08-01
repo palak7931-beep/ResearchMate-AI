@@ -1,5 +1,17 @@
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import Features from "../components/Features";
+import Footer from "../components/Footer";
+
 const Home = () => {
-  return <h1>ResearchOS AI</h1>;
+  return (
+    <div className="min-h-screen bg-[#030712] text-white">
+      <Navbar />
+      <Hero />
+      <Features />
+      <Footer />
+    </div>
+  );
 };
 
 export default Home;
