@@ -1,21 +1,23 @@
-# Node
+# Dependencies
 node_modules/
 
-# Build
+# Production
 dist/
+
+# Environment Variables
+.env
+.env.local
 
 # Logs
 *.log
 
-# Environment
-.env
-.env.local
-
 # VS Code
 .vscode/
 
-# OS
+# macOS
 .DS_Store
+
+# Windows
 Thumbs.db
 
 # Python
