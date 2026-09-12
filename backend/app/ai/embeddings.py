@@ -1,24 +1,24 @@
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from fastembed import TextEmbedding
 
 
-class LazyEmbedding:
+class FastEmbedWrapper:
     def __init__(self):
         self._model = None
 
     def _get_model(self):
         if self._model is None:
-            print("Loading embedding model...")
-            self._model = HuggingFaceEmbeddings(
+            print("Loading FastEmbed model...")
+            self._model = TextEmbedding(
                 model_name="sentence-transformers/all-MiniLM-L6-v2"
             )
-            print("Embedding model loaded.")
+            print("FastEmbed model loaded.")
         return self._model
 
     def embed_documents(self, texts):
-        return self._get_model().embed_documents(texts)
+        return [embedding.tolist() for embedding in self._get_model().embed(texts)]
 
     def embed_query(self, text):
-        return self._get_model().embed_query(text)
+        return next(self._get_model().embed([text])).tolist()
 
 
-embedding_model = LazyEmbedding()
+embedding_model = FastEmbedWrapper()
