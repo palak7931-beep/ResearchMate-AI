@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="min-h-screen flex flex-col items-center justify-center text-center px-6">
       <p className="text-blue-400 font-semibold mb-4">
@@ -17,11 +21,21 @@ const Hero = () => {
       </p>
 
       <div className="mt-10 flex gap-4">
-        <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold">
+        <button
+          onClick={() => navigate("/register")}
+          className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold"
+        >
           Get Started
         </button>
 
-        <button className="border border-gray-700 hover:border-blue-500 px-6 py-3 rounded-xl">
+        <button
+          onClick={() => {
+            document
+              .getElementById("features")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="border border-gray-700 hover:border-blue-500 px-6 py-3 rounded-xl"
+        >
           Learn More
         </button>
       </div>
