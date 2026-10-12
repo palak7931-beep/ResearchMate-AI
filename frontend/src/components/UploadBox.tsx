@@ -19,7 +19,7 @@ export default function UploadBox({ onUploadSuccess }: Props) {
     setLoading(true);
 
     try {
-      await api.post("/pdf", formData, {
+      await api.post("/upload/pdf", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
