@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+chroma_db/
+.git/
+.gitignore
+Dockerfile
+docker-compose.yml
+*.md
+railway.json
